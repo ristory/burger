@@ -1,10 +1,10 @@
-var connection = require('./connection');
+var connection = require('./connection.js');
 
 var orm = {
     selectAll: function(whatToSelect, table, orderCol) {
-        var queryString = "SELECT ?? FROM ?? ORDER BY ?? DESC";
+        var queryString = "SELECT ?? FROM ??";
         console.log(queryString);
-        connection.query(queryString, [whatToSelect, table, orderCol], function(err, result) {
+        connection.query(queryString, [whatToSelect, table], function(err, result) {
           if (err) throw err;
           console.log(result);
         });
